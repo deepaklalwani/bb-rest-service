@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<manifest>
+  <!-- core extension information -->
+  <plugin>
+    <name value= "Pragya BB Connector"/>
+    <handle value= "connector"/>
+    <description value= "Pragya BB Connector"/>
+    <version value= "1.0.0"/>
+    <requires>
+    	<bbversion value="9.1.0"/>
+    </requires>
+    <vendor>
+      <id value="ps"/>
+      <name value="Pragya Systems"/>
+      <url value="http://www.pragyasystems.com/" />
+      <description value="" />
+    </vendor>
+    <http-actions>
+    </http-actions>
+    
+    <!-- Tools defined by this extension -->
+    <application-defs>
+      <application handle="bbconnector" type="shared" use-ssl="false" name="BB Connector Application" can-allow-guest="true"
+       small-icon="" large-icon="">
+        <description>Information Page</description>
+        <links>
+           <link>
+            <type value="system_tool"/>
+            <name value="Admin Tool"/>
+            <url value="admin.jsp" />
+            <description value="Demonstrates adding tools to the system administration tool." />
+            <icons>
+              <listitem value="images/icon.gif"/>
+            </icons>
+          </link>
+        </links>
+      </application>
+    </application-defs>
+    
+    
+
+    <!-- code permissions required for proper operation -->
+    <permissions>
+     <permission type="socket" name="*" actions="resolve,connect"/>
+      <permission type="attribute" name="user.authinfo" actions="get,set"/>
+      <permission type="attribute" name="user.personalinfo" actions="get,set"/>
+      <permission type="java.lang.reflect.ReflectPermission" name="suppressAccessChecks"/>
+      <permission type="java.lang.RuntimePermission" name="*"/>
+    </permissions>
+  </plugin>
+
+</manifest>
